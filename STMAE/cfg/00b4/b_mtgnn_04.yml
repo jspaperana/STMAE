@@ -1,0 +1,30 @@
+pipeline: 'baseline'
+backbone: 'mtgnn'
+in_horizon: 12
+out_horizon: 12
+dtype: 'float32'
+adj_type: 'None'
+
+backbone_specs:
+  in_dim: 2
+  out_dim: 1
+  rnn_dim: 32
+  num_layers: 3
+
+data_specs:
+  dataset: 'pems_04'
+
+learn_specs:
+  opt_name: 'adam'
+  pt_lr: 0.001
+  pt_wd: 0.0001
+  batch_size: 64
+  train_epoch: 100
+  pt_sched_policy: 'None'
+  pt_num_epoch_fix_lr: 0
+  pt_decay_step: 0
+  pt_gamma: 0
+  pt_clip_grad: 5
+  patience: -1
+
+  
